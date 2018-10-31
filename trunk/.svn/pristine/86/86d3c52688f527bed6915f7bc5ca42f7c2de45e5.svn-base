@@ -1,0 +1,36 @@
+.faculty-img{
+	width:100%;
+	border-radius: 2px;
+	box-shadow:0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+}
+
+ul.list{
+	padding-left: 1.5rem;
+}
+
+ul.list > li.header{
+	font-size: 1.2rem;
+	margin-top: 1.5rem;
+}
+
+.more-btn{
+	color:darkred;
+	float: right;
+}
+
+.btn-circle-more{
+	width:30px;
+	height:30px;
+}
+
+.btn-circle-more i{
+	line-height:30px;
+}
+
+.resume-name.dark{
+	color:rgba(0,0,0,0.6) !important;
+}
+
+.resume-name.light{
+	color:rgba(255,255,255,0.8) !important;
+}

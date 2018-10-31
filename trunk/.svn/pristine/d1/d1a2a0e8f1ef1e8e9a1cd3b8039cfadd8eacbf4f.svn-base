@@ -1,0 +1,4 @@
+
+app.controller('researchTrackCtrl', function($scope, $http) {
+
+});
