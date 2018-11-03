@@ -1,0 +1,160 @@
+/* Custom Stylesheet */
+
+
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.chi-str {
+    font-family: Microsoft JhengHei;
+}
+
+nav ul a,
+nav .brand-logo {
+    color: #444;
+}
+
+p {
+    line-height: 2rem;
+}
+
+.button-collapse {
+    color: #26a69a;
+}
+
+.parallax-container {
+    min-height: 380px;
+    line-height: 0;
+    height: auto;
+    color: rgba(255, 255, 255, .9);
+}
+
+.parallax-container .section {
+    width: 100%;
+}
+
+.page.container {
+    width: 85% !important;
+}
+
+@media only screen and (min-width: 600px) {
+    main {
+        padding-left: 300px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .parallax-container .section {
+        position: absolute;
+        top: 40%;
+    }
+    #index-banner .section {
+        top: 10%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #index-banner .section {
+        top: 0;
+    }
+}
+
+.icon-block {
+    padding: 0 15px;
+}
+
+.icon-block .material-icons {
+    font-size: inherit;
+}
+
+
+/* Page Layout */
+
+#logo-side-bar {
+    height: 225px;
+}
+
+#logo-side-bar .logo {
+    width: 225px;
+    margin-top: 50px;
+}
+
+strong.page-title {
+    font-size: 48px;
+    color: rgba(255, 255, 255, 0.99);
+    line-height: 116px;
+}
+
+nav.page-top {
+    height: 116px;
+    margin: 0 auto;
+}
+
+.nav-wrapper {
+    height: 100%;
+}
+
+
+/* Footer */
+.no-border.collection{
+    border: 0;
+}
+
+.collection-item.opacity{
+    background-color:inherit;
+    border-bottom: 0;
+}
+
+footer.page-footer {
+    margin: 0;
+}
+
+/* Divider */
+
+.hidden-divider {
+    padding: 1rem;
+}
+
+.small-hidden-divider {
+    padding: 0.5rem;
+}
+
+.large-hidden-divider {
+    padding: 2rem;
+}
+
+
+/* Typography Layout */
+
+.header {
+    font-weight: 300;
+}
+
+p.limited-line-3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    /* number of lines to show */
+    line-height: 2rem;
+    /* fallback */
+    max-height: 6rem;
+    /* fallback */
+}
+
+p.limited-line-4 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    /* number of lines to show */
+    line-height: 2rem;
+    /* fallback */
+    max-height: 8rem;
+    /* fallback */
+}

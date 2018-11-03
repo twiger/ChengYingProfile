@@ -1,0 +1,11 @@
+
+var app = angular.module('colors', []);
+
+(function($){
+  $(function(){
+
+    $('.button-collapse').sideNav('show');
+    $('.parallax').parallax();
+
+  }); // end of document ready
+})(jQuery); // end of jQuery name space

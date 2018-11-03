@@ -1,0 +1,5 @@
+var app = angular.module('colors', []);
+
+app.controller('researchTrackCtrl', function($scope, $http) {
+
+});

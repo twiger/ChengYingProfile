@@ -1,0 +1,17 @@
+<ul id="slide-out" class="side-nav fixed">
+    <li id="logo-side-bar">
+        <div class="row center">
+            <img class="logo" src="res/img/new-logo.png">
+            <h6><b>Database and Software Engineering</b></h6>
+            <h6 class="chi-str"><b>資料庫與軟體工程實驗室</b></h6>
+        </div>
+    </li>
+    <li>
+        <div class="divider"></div>
+    </li>
+    <li><a class="waves-effect" href="#!">Home</a></li>
+    <li><a class="waves-effect" href="#!">Research Track</a></li>
+    <li><a class="waves-effect" href="#!">Faculty & Members</a></li>
+    <li><a class="waves-effect" href="#!">Publication</a></li>
+    <li><a class="waves-effect" href="#!">DBSE Wiki</a></li>
+</ul>

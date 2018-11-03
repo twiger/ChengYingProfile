@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <title>Parallax Template - Materialize</title>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/web/dist/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="/web/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="/web/css/research.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body ng-app="colors" ng-controller="mainCtrl">
+    <div ng-include="'/web/html/global/sideNavBar.html'"></div>
+    <main>
+        <nav class="page-top teal">
+            <div class="page container">
+                <div class="nav-wrapper">
+                    <strong class="page-title">Research Track</strong>
+                </div>
+            </div>
+        </nav>
+        <div class="page container">
+            <div class="row">
+                <div class="col s12">
+                    <div class="hidden-divider"></div>
+                    <h3 class="header teal-text">Overview</h3>
+                    <div class="divider"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col m7 s12 center">
+                    <img class="track-overview" src="/web/res/img/project-world-track-overview.png">
+                </div>
+                <div class="col m5 s12">
+                    <div class="section">
+                        <h5>Software Development</h5>
+                        <p class="limited-line-3">Software development is the series of activities that builds up software product. Generally speaking, there are several phases in software development, such as requirement, design, implementation and maintenance…etc. We follow the principles of software development to deal with DBSE projects. Sometimes problems have occurred during project development, they probably would be good research motivations to be accomplished. Use Case and Refactoring are both the frequent activities that we often decide to carry out. </p>
+                    </div>
+                    <div class="section">
+                        <h5>Programming Education</h5>
+                        <p class="limited-line-3">We are experienced lab. for computer science education. Computer Science Course students are potential software engineers in the future. On the course, students realize software development by programming homework practicing. Teaching Assist(TA) designs homework assignment and evaluate the programming homework. Course students writing programs to match assignment, upload program and document, and waiting for evaluation result. In this process, we are interested in program learning improvement, rapid program evaluation response, and automation of TA management process. </p>
+                    </div>
+                    <div class="section">
+                        <h5>Information Processing</h5>
+                        <p class="limited-line-3">Information processing concerns with gathering, manipulating, storing, retrieving, and classifying recorded information. Currently, the problems we have concerned are about information visualization, information retrieval and human computer interaction improvement.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <h5>Open Source</h5>
+                    <p class="limited-line-3">We investigate open source community activities and collect project activities information from projects open source foundry. We are interested in factors of success open source project and process of open source software development. With these issues, we are devoted to model source development process and assist open source development process.</p>
+                    <div class="small-hidden-divider"></div>
+                    <div class="hidden-divider"></div>
+                </div>
+            </div>
+        </div>
+        <div ng-include="'/web/html/global/footer.html'"></div>
+    </main>
+    <!--  Scripts-->
+    <script src="/web/dist/jquery-3.1.1.js"></script>
+    <script src="/web/dist/materialize.js"></script>
+    <script src="/web/dist/angular.js"></script>
+    <script src="/web/js/init.js"></script>
+    <script src="/web/js/mainCtrl.js"></script>
+</body>
