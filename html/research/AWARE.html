@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <title>Project - Exam Analysis System</title>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/web/dist/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="/web/css/global.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link rel="stylesheet" href="/web/dist/jstree/themes/default/style.min.css" />
+    <!-- <link href="/web/css/research.css" type="text/css" rel="stylesheet" media="screen,projection" /> -->
+</head>
+
+<body ng-app="colors" ng-controller="impactReportCtrl">
+    <div ng-include="'/web/html/global/sideNavBar.html'"></div>
+    <div class="fixed-action-btn">
+        <a href="#threshold_setting" class="btn-floating btn-large red">
+            <i class="material-icons">mode_edit</i>
+        </a>
+    </div>
+    <main>
+        <nav class="page-top teal">
+            <div class="page container">
+                <div class="nav-wrapper">
+                    <strong class="page-title">AWARE : </strong>
+                    <strong class="flow-text sub-page-title">A Win-win Architecture for api REmoval.</strong>
+                </div>
+            </div>
+        </nav>
+        <div class="page container">
+            <!-- Impact Detail Modal -->
+            <div id="impact_detail" class="modal">
+                <div class="modal-content">
+                    <h4>Detail of API Usage Statistics</h4>
+                    <div class="divider"></div>
+                    <blockquote>
+                        <strong>Measurement of API Usage Metric</strong>
+                    </blockquote>
+                    <div class="section-content">
+                        <table class="sub-table">
+                            <thead>
+                                <tr>
+                                    <th class="" style="width:15%">Metric</th>
+                                    <!-- <th style="width:18%">Usage Scenario</th> -->
+                                    <th>Definition</th>
+                                    <th class="align-center" style="width:10%">Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="metric in impact_detail.display_project.metric">
+                                    <td class="thin-td">{{getMetricInfo(metric.name, 'name')}}
+                                        <!-- <sub>{{getMetricInfo(metric.name, 'type')}}</sub> -->
+                                    </td>
+                                    <!-- <td class="">{{getMetricInfo(metric['name'], 'scenarios')}}</td> -->
+                                    <td class="thin-td">
+                                        <ul>
+                                            <li ng-repeat="creiteria in getMetricInfo(metric['name'], 'criteria')">{{creiteria}}</li>
+                                        </ul>
+                                    </td>
+                                    <td class="thin-td align-center">{{metric.value}}</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td class="" colspan="2"><strong>Sum of All Metrics</strong></td>
+                                    <td class="align-center"><strong>{{impact_detail.display_project.sum}}</strong></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+                </div>
+            </div>
+            <div id="threshold_setting" class="modal">
+                <div class="modal-content">
+                    <h4 class="flow-text">Sensitivity Setting</h4>
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="threshold" placeholder="{{threshold}}" value="{{threshold}}" ng-model="temp_threshold" type="text" class="validate">
+                                    <label for="threshold">Threshold (%)</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <input id="offset" placeholder="{{offset}}" value="{{offset}}" ng-model="temp_offset" type="text" class="validate">
+                                    <label for="offset">Offset (%) : The threshold need to > offset!</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-action waves-effect btn-flat" ng-click="closeThresholdSetting()">Cancel</a>
+                    <a href="#!" class="modal-action modal-close waves-effect btn-flat">Apply</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <div class="hidden-divider"></div>
+                    <h3 class="header teal-text">Architecture of AWARE</h3>
+                    <div class="divider"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <div class="hidden-divider"></div>
+                    <img class="aware-architecture" src="/web/res/img/AWAREArchitecture.png">
+                    <div class="hidden-divider"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <div class="hidden-divider"></div>
+                    <h3 class="header teal-text">API Removal Impact Report</h3>
+                    <div class="divider"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <!-- <div class="large-hidden-divider"></div> -->
+                    <blockquote>
+                        <h5>API-Tree with API Usage Statistics</h5>
+                    </blockquote>
+                    <div class="hidden-divider"></div>
+                    <div class="section-content">
+                        <div id="api_change_tree"></div>
+                        <!-- <div ng-model="api_change_tree" should-apply="ignoreModelChanges()" tree="treeInstance" tree-events-obj="treeEventsObj"></div> -->
+                        <div id="click_node_triggrt" ng-click="oepnImpactDetail(node_data)"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <div class="large-hidden-divider"></div>
+                </div>
+            </div>
+        </div>
+        <div ng-include="'/web/html/global/footer.html'"></div>
+    </main>
+    <!--  Scripts-->
+    <script src="/web/dist/jquery-3.1.1.js"></script>
+    <script src="/web/dist/materialize.js"></script>
+    <script src="/web/dist/angular.js"></script>
+    <script src="/web/js/global.js"></script>
+    <script src="/web/js/awareCtrl.js"></script>
+    <script src="/web/dist/jstree/jstree.min.js"></script>
+    <script src="/web/dist/jstree/ngJsTree.min.js" />
+    </body>

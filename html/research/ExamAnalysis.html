@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <title>Project - Exam Analysis System</title>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/web/dist/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="/web/css/global.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <!-- <link href="/web/css/research.css" type="text/css" rel="stylesheet" media="screen,projection" /> -->
+</head>
+
+<body ng-app="colors" ng-controller="examAnalysisCtrl">
+    <div ng-include="'/web/html/global/sideNavBar.html'"></div>
+    <main>
+        <nav class="page-top teal">
+            <div class="page container">
+                <div class="nav-wrapper">
+                    <strong class="page-title">Project - Exam Analysis System</strong>
+                </div>
+            </div>
+        </nav>
+        <div class="page container">
+            <div class="row">
+                <div class="col s12">
+                    <div class="hidden-divider"></div>
+                    <h3 class="header teal-text">Demo - 後測分析結果</h3>
+                    <div class="divider"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <h4>統計圖表</h4>
+                    <div class="hidden-divider"></div>
+                    <div class="row">
+                        <div class="col s6">
+                            <h5>答對率長條圖</h5>
+                            <p class="picture_discript">各個層次中，答對題目所占的百分比</p>
+                            <canvas id="memory-correct"></canvas>
+                        </div>
+                        <div class="col s6">
+                            <h5>難度對照長條圖</h5>
+                            <p class="picture_discript">各個難度中，自定難度所佔的題數和實際難度所占的題數</p>
+                            <canvas id="real-difficulty"></canvas>
+                            <div id="bar_item" style="width:70%;">
+                                <div class="bg_white bar_inline"></div>
+                                <p class="bar_inline ">自定難度</p>
+                                <div class="bg_blue bar_inline"></div>
+                                <p class="bar_inline">實際難度</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s6">
+                            <h5>鑑別度折線圖</h5>
+                            <p class="picture_discript">各個難度中，自定難度所佔的題數和實際難度所占的題數</p>
+                            <canvas id="discrimination"></canvas>
+                        </div>
+                        <div class="col s6">
+                            <h5>分年細目題長條圖</h5>
+                            <p class="picture_discript">各個分年細目所擁有題數</p>
+                            <canvas id="Item"></canvas>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="hidden-divider"></div>
+                        <div class="col s6">
+                            <h5>分年細目答對率長條圖</h5>
+                            <p class="picture_discript">各個分年細目的答對率</p>
+                            <canvas id="item_correct"></canvas>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="hidden-divider"></div>
+                    </div>
+                    <h4>題目詳細資料</h4>
+                    <table class="ui table centered highlight" id="table">
+                        <thead>
+                            <tr>
+                                <th>題目</th>
+                                <th>認知歷程向度</th>
+                                <th>自定難度</th>
+                                <th>實際難度</th>
+                                <th>答對率</th>
+                                <th>正確答案</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table">
+                            <tr ng-repeat="values in exam_doc.practices">
+                                <td>{{values.number}}</td>
+
+                                <td ng-if="values.level == '1'">記憶</td>
+                                <td ng-if="values.level == '2'">了解</td>
+                                <td ng:if="values.level == '3'">應用</td>
+                                <td ng:if="values.level == '4'">分析</td>
+                                <td ng:if="values.level == '5'">評鑑</td>
+                                <td ng:if="values.level == '6'">創造</td>
+
+                                <td ng-if="values.felt_difficulty == '1'">易</td>
+                                <td ng-if="values.felt_difficulty == '2'">中</td>
+                                <td ng:if="values.felt_difficulty == '3'">難</td>
+
+                                <td ng:if="values.real_difficulty == 1">易</td>
+                                <td ng:if="values.real_difficulty == 2">中</td>
+                                <td ng:if="values.real_difficulty == 3">難</td>
+                                <td>{{values.correct_rate}}</td>
+                                <td>{{values.correct_ans}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="hidden-divider"></div>
+                </div>
+            </div>
+        </div>
+        <div ng-include="'/web/html/global/footer.html'"></div>
+    </main>
+    <!--  Scripts-->
+    <script src="/web/dist/jquery-3.1.1.js"></script>
+    <script src="/web/dist/materialize.js"></script>
+    <script src="/web/dist/angular.js"></script>
+    <script src="/web/js/global.js"></script>
+    <script src="/web/js/examAnalysisCtrl.js"></script>
+    <script src="/web/dist/Chart.js"></script>
+    <script src="/web/dist/Chart.min.js"></script>
+    <script src="/web/dist/raphael.js"></script>
+    <script src="/web/dist/Treant.min.js"></script>
+    <script src="/web/dist/super-simple.js"></script>
+</body>
