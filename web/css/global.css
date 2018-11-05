@@ -40,10 +40,16 @@ p {
     width: 85% !important;
 }
 
-@media only screen and (min-width: 600px) {
-    main {
-        padding-left: 300px;
-    }
+.menu-btn {
+    display: none;
+}
+
+main{
+    margin-left: 300px;
+}
+
+.col.m3.s12.section-header.padding-left{
+    padding-left: 3%;
 }
 
 @media only screen and (max-width: 992px) {
@@ -51,14 +57,32 @@ p {
         position: absolute;
         top: 40%;
     }
+
     #index-banner .section {
         top: 10%;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    #mySidenav{
+        display:block;
+        transition: 0.5s;
+    }
+    main {
+        transition: 0.5s;
+        margin-left: 0px;
+        width: 100%;
     }
 }
 
 @media only screen and (max-width: 600px) {
     #index-banner .section {
         top: 0;
+    }
+    main {
+        width: 100%;
     }
 }
 
@@ -80,7 +104,7 @@ p {
 #logo-side-bar .logo {
     width: 225px;
     margin-top: 50px;
-    border-radius:120px;
+    border-radius: 120px;
 }
 
 strong.page-title {
@@ -90,7 +114,7 @@ strong.page-title {
 }
 
 nav.page-top {
-    height: 116px;
+    height: 100%;
     margin: 0 auto;
 }
 
@@ -100,12 +124,12 @@ nav.page-top {
 
 
 /* Footer */
-.no-border.collection{
+.no-border.collection {
     border: 0;
 }
 
-.collection-item.opacity{
-    background-color:inherit;
+.collection-item.opacity {
+    background-color: inherit;
     border-bottom: 0;
 }
 
@@ -164,65 +188,92 @@ p.limited-line-4 {
     /* fallback */
 }
 
-.text-italic{
+.text-italic {
     font-style: italic;
 }
 
-a.tech-url{
-    color:inherit;
+a.tech-url {
+    color: inherit;
     border-bottom: 1px solid black;
 }
 
 /* Element Layout */
 
-.small-top-margin{
+.small-top-margin {
     margin-top: 0.25rem !important;
 }
 
-.faculty-img, .collection-img {
+.faculty-img,
+.collection-img {
     width: 100%;
     border-radius: 2px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
 
-td.top-align{
-    vertical-align:top;
+td.top-align {
+    vertical-align: top;
 }
 
-.right-align{
+.right-align {
     text-shadow: right;
 }
 
 /* picture paint */
 #bar_item {
-  height: 30px;
-  margin-left: auto;
-  margin-right: auto;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
 
 }
+
 .bar_inline {
-  display: inline-block;
-  margin-top:0px;
+    display: inline-block;
+    margin-top: 0px;
 }
+
 .bg_white {
-  background-color: #e6e6e6;
+    background-color: #e6e6e6;
 }
+
 .bg_blue {
-  background-color: #97bbcd;
+    background-color: #97bbcd;
 }
+
 .bg_purple {
-  background-color: #cc33ff;
+    background-color: #cc33ff;
 }
+
 #bar_item div {
-  width: 10px;
-  height: 10px;
+    width: 10px;
+    height: 10px;
 }
 
 
 /* For AWARE Demo */
 
-img.aware-architecture{
-    width:85%;
+img.aware-architecture {
+    width: 85%;
     margin: 25px;
 
+}
+
+/* For HW Reviewing Tool Demo */
+
+iframe.google-sheet {
+    width: 96%;
+    height: 550px;
+    margin: 0% 2%;
+}
+
+.tabs .tab a {
+    color: black;
+}
+
+.tabs .tab a.active,
+.tabs .tab a:hover {
+    color: #26a69a;
+}
+
+.tabs .indicator {
+    background-color: #26a69a;
 }

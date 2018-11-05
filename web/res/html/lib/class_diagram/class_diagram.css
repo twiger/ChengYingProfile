@@ -1,0 +1,79 @@
+.dragclass{
+	position: relative;
+	cursor: move;
+}
+
+.APITerm{
+    font-family: "verdana";
+    font-size: 16px;
+    text-align: center;
+    font-weight: bolder ;
+}
+
+
+img{
+    vertical-align:middle; 
+}
+
+.block{
+   padding-top: 2px;
+   padding-bottom: 2px;
+   position: absolute;
+   border: 2px solid #000;
+   background-color: #dcffdc;
+   
+}
+
+.fieldBlock{
+   font-family: "verdana";
+   padding-top: 2px;
+   padding-bottom: 2px;
+   border-bottom: 1px solid #222;
+}
+
+.methodBlock{
+   font-family: "verdana";
+   padding-top: 2px;
+   padding-bottom: 2px;
+}
+
+.blockTitle{
+   padding-right: 20px;
+   padding-left: 20px;
+   font-size: 14px;
+   font-family: "verdana";
+   font-weight: bolder ;
+   text-align:center;
+   border-bottom: 1px solid #222;
+   padding-top: 2px;
+   padding-bottom: 2px;
+}
+
+.blockElement{
+    padding-right: 15px;
+    padding-left: 5px;
+    /*
+    padding-top: 1px;
+    padding-bottom: 1px;
+    */
+    
+    /*font-family: Courier New; */
+    vertical-alignment: middle;
+    font-family: verdana;
+    font-size: 12;
+    color:#444;    
+}
+
+.method{
+    font-size: 12px;
+    color:#444;
+}
+
+.field{
+    font-size: 11px;
+    color:#444;
+}
+
+.abstract{
+    font-style: italic;
+}

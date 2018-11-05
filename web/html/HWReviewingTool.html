@@ -12,13 +12,13 @@
     <!-- <link href="/web/css/research.css" type="text/css" rel="stylesheet" media="screen,projection" /> -->
 </head>
 
-<body ng-app="colors" ng-controller="examAnalysisCtrl">
+<body ng-app="colors" ng-controller="hwReviewCtrl">
     <div ng-include="'/web/html/global/sideNavBar.html'"></div>
     <main>
         <nav class="page-top teal">
             <div class="page container">
                 <div class="nav-wrapper">
-                    <strong class="page-title">Project - IntroCS HW Reviewing Tool</strong>
+                    <strong class="page-title">Project - HW Review Tool</strong>
                 </div>
             </div>
         </nav>
@@ -34,12 +34,12 @@
                 <div class="col s12">
                     <h5>Introduction</h5>
                     <p>
-                        EAS provides more insight into the reason why a student get the grade. Instead of only assessing the students by the grade, teachers can provide the questions of the exam and the answers wrote by students to EAS. EAS will provide several charts and tables, shown in the following demo section, for teachers to understand the problem faced by students and assess the effectiveness of the exams.
+                        As a IntroCS assistant, verifying the program homework submitted by students is its duty. However, students have to complete five kinds of program homework one semester five times, and there are fifty students in a class. How to verify such numerous programs accurately becomes a serious issue faced by assistant. HW Review Tool help assistant automatically execute the submitted programs according to predefined test cases and generate the reports of each test cases. Besides, the tool also prepare a excel for assistant to open these reports, review the reports, and give the grade with comments to students. The burden afforded by assistant is mitigated.
                     </p>
                     <div class="small-hidden-divider"></div>
                     <h5>My Responsibility</h5>
                     <p>
-                        Being a requirement engineer to elicit the requirement from teachers and verify the software specification through paper prototyping. Being a back-end developer to coordinate with a front-end developer and construct the platform with TurboGears. Being a decision maker to terminate the project based on the domain analysis result.
+                        Maintaining, modifying, and using the tool to review more than 15 kinds of homework for two years.  Evolving the tool to generate the excel for opening the reports smoothly, giving the grade conveniently, and analyzing the document described the submitted programs with comments automatically.
                     </p>
                     <div class="small-hidden-divider"></div>
                     <div class="hidden-divider"></div>
@@ -48,103 +48,44 @@
             <div class="row">
                 <div class="col s12">
                     <div class="hidden-divider"></div>
-                    <h3 class="header teal-text">Architecture of Exam. Anal. Sys.</h3>
+                    <h3 class="header teal-text">Project Demo</h3>
                     <div class="divider"></div>
                 </div>
             </div>
             <div class="row">
                 <div class="col s12">
-                    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTBINFcIzIqk1HvxNnkR6rCSoNLXgJs8kzNP9kRzOjWghSAvuChISjPHOSa4CiNMBHs3uU0Ox3QQjBc/pubhtml?gid=1460089966&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+                    <div class="section">
+                        <h5>Generating Excel for IntroCS HW Review</h5>
+                        <div class="hidden-divider"></div>
+                        <iframe class="google-sheet" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTBINFcIzIqk1HvxNnkR6rCSoNLXgJs8kzNP9kRzOjWghSAvuChISjPHOSa4CiNMBHs3uU0Ox3QQjBc/pubhtml?gid=1460089966&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col s12">
                     <div class="hidden-divider"></div>
-                    <h3 class="header teal-text">Demo - 後測分析結果</h3>
-                    <div class="divider"></div>
+                    <h5>Executing Programs According to Test Cases with Reports</h5>
+                    <div class="hidden-divider"></div>
+                    <ul class="tabs">
+                        <li class="tab col s4"><a class="active" href="#stu1">Student 1</a></li>
+                        <li class="tab col s4"><a href="#stu2">Student 2</a></li>
+                        <li class="tab col s4"><a href="#stu3">Student 3</a></li>
+                    </ul>
                 </div>
+                <div id="stu1" class="col s12">
+                    <div ng-include="'/web/res/html/stu1.html'"></div>
+                </div>
+                <div id="stu2" class="col s12">
+                    <div ng-include="'/web/res/html/stu2.html'"></div>
+                </div>
+                <div id="stu3" class="col s12">
+                    <div ng-include="'/web/res/html/stu3.html'"></div>
+                </div>
+                <div class="hidden-divider"></div>
             </div>
             <div class="row">
                 <div class="col s12">
-                    <h4>統計圖表</h4>
-                    <div class="hidden-divider"></div>
-                    <div class="row">
-                        <div class="col s6">
-                            <h5>答對率長條圖</h5>
-                            <p class="picture_discript">各個層次中，答對題目所占的百分比</p>
-                            <canvas id="memory-correct"></canvas>
-                        </div>
-                        <div class="col s6">
-                            <h5>難度對照長條圖</h5>
-                            <p class="picture_discript">各個難度中，自定難度所佔的題數和實際難度所占的題數</p>
-                            <canvas id="real-difficulty"></canvas>
-                            <div id="bar_item" style="width:70%;">
-                                <div class="bg_white bar_inline"></div>
-                                <p class="bar_inline ">自定難度</p>
-                                <div class="bg_blue bar_inline"></div>
-                                <p class="bar_inline">實際難度</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s6">
-                            <h5>鑑別度折線圖</h5>
-                            <p class="picture_discript">各個難度中，自定難度所佔的題數和實際難度所占的題數</p>
-                            <canvas id="discrimination"></canvas>
-                        </div>
-                        <div class="col s6">
-                            <h5>分年細目題長條圖</h5>
-                            <p class="picture_discript">各個分年細目所擁有題數</p>
-                            <canvas id="Item"></canvas>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="hidden-divider"></div>
-                        <div class="col s6">
-                            <h5>分年細目答對率長條圖</h5>
-                            <p class="picture_discript">各個分年細目的答對率</p>
-                            <canvas id="item_correct"></canvas>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="hidden-divider"></div>
-                    </div>
-                    <h4>題目詳細資料</h4>
-                    <table class="ui table centered highlight" id="table">
-                        <thead>
-                            <tr>
-                                <th>題目</th>
-                                <th>認知歷程向度</th>
-                                <th>自定難度</th>
-                                <th>實際難度</th>
-                                <th>答對率</th>
-                                <th>正確答案</th>
-                            </tr>
-                        </thead>
-                        <tbody id="table">
-                            <tr ng-repeat="values in exam_doc.practices">
-                                <td>{{values.number}}</td>
-
-                                <td ng-if="values.level == '1'">記憶</td>
-                                <td ng-if="values.level == '2'">了解</td>
-                                <td ng:if="values.level == '3'">應用</td>
-                                <td ng:if="values.level == '4'">分析</td>
-                                <td ng:if="values.level == '5'">評鑑</td>
-                                <td ng:if="values.level == '6'">創造</td>
-
-                                <td ng-if="values.felt_difficulty == '1'">易</td>
-                                <td ng-if="values.felt_difficulty == '2'">中</td>
-                                <td ng:if="values.felt_difficulty == '3'">難</td>
-
-                                <td ng:if="values.real_difficulty == 1">易</td>
-                                <td ng:if="values.real_difficulty == 2">中</td>
-                                <td ng:if="values.real_difficulty == 3">難</td>
-                                <td>{{values.correct_rate}}</td>
-                                <td>{{values.correct_ans}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="hidden-divider"></div>
+                    <div class="large-hidden-divider"></div>
                 </div>
             </div>
         </div>
@@ -155,5 +96,5 @@
     <script src="/web/dist/materialize.js"></script>
     <script src="/web/dist/angular.js"></script>
     <script src="/web/js/global.js"></script>
-    <script src="/web/js/examAnalysisCtrl.js"></script>
+    <script src="/web/js/hwReviewCtrl.js"></script>
 </body>

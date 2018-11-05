@@ -1,0 +1,488 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script type="text/javascript" src="/web/res/html/lib/wdScrollTab/src/jquery.js"></script>
+	<style type="text/css">
+	.overload{
+                color:#FF3333;
+                font-weight: 100;
+        }
+	.input{
+		font-family:Lucida Console;
+		font-size:14px;
+		color:#08088A;
+		background:#ECF8E0;
+		font-weight:900;
+		margin:5px;
+		padding:8px 8px 8px 8px;
+	}
+	
+	.output{
+		font-family:細明體;
+		font-size:13px;
+		color:Black;
+		background:#F5F5DC;
+		font-weight:100;margin:5px;
+		padding:8px 8px 8px 8px;;
+	}
+	
+	.error{
+		font-family:Lucida Console;
+		font-size:13px;
+		color:#8A0808;
+		background:#F8E0E0;
+		font-weight:100;
+		margin:5px;
+		padding:8px 8px 8px 8px;
+	}
+	
+	.title{
+		font-family:Lucida Console;
+		font-size:18px;
+		color:#0000CC;
+		background:#DDDDDD;
+		font-weight:500;margin:25px;
+		padding:10px;
+	}
+	
+	.noteTitle{
+		padding:8px 8px 8px 8px;
+		border-style:solid;
+		border-width:1px;
+		border-color:#FFFAFA;
+		background:#EEEEFF;
+		alignment:center;
+	}
+	.framePanel{
+		position:fixed;
+		float:right;
+		right:40px;
+		background:#FFEEEE;
+		width: 20%;
+	}
+	.noteContent{
+		font-size:20px;
+	}
+	</style>
+	<script type="text/javascript" >
+		$(document).ready(function(){ 
+			$('#t-frame').hide();
+			$('#show-bt').click(function() {
+				$('#frame').toggle('slow', function() {});
+			});
+		});
+		
+		function OnloadComplete(){       
+			$('#no-frame').hide();
+			$('#t-frame').show();
+		};
+    
+	</script>
+	</head>
+	
+	<body>
+		
+		<div class="title">E64021012-case2<div class="output"><br>
+<br>
+<br>
+<br>
+　　┌─┐<br>
+　　│　○╭<br>
+　　│╭┼╯<br>
+　　│　│<br>
+　　│　∩<br>
+&nbsp;┌───────┐<br>
+&nbsp;│ＨＡＮＧＭＡＮ│<br>
+&nbsp;└───────┘　　　Hello,welcome&nbsp;to&nbsp;Hangman&nbsp;game.<br>
+<br>
+<br>
+<br>
+&nbsp;[&nbsp;遊戲規則&nbsp;]<br>
+<br>
+&nbsp;&nbsp;&nbsp;一、取得勝利需猜對三個單字。<br>
+&nbsp;&nbsp;&nbsp;二、猜字時，可以一次猜一個字母也可以猜整個單字。<br>
+&nbsp;&nbsp;&nbsp;三、玩家有14次的失誤機會(Failure&nbsp;Chance)，當第15次猜錯，<br>
+&nbsp;&nbsp;&nbsp;　　則會出現被吊死的Hangman先生，遊戲結束。<br>
+&nbsp;&nbsp;&nbsp;四、輸入答案時可使用指令。<br>
+<br>
+┌────────────────────────┐<br>
+│[&nbsp;指令說明&nbsp;]　　　　　　　　　　　　　　　　　　│<br>
+│&nbsp;　　　　　　　　　　&nbsp;　　　　　　　　　　　　　│<br>
+│&nbsp;#?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;查看指令說明。　　　　　　　　　　　│<br>
+│&nbsp;#Help_Me&nbsp;:&nbsp;得到一字提示，扣除兩次[Chance]。　　│<br>
+│&nbsp;#Exit&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;離開程式。　　　　　　　　　　　　　│<br>
+│&nbsp;　　　　　　　　　　&nbsp;　　　　　　　　　　　　　│<br>
+└────────────────────────┘<br>
+-----------------------------------------------------------------<br>
+&nbsp;&nbsp;&nbsp;請輸入難度&nbsp;(BABY,&nbsp;EASY,&nbsp;NORMAL,&nbsp;HARD,&nbsp;HELL):&nbsp;</div>
+<div class="input"><div style="float:left;">1</div>&nbsp;<div style="float:right;margin-right:30px;">NORMAL<br>
+</div></div>
+<div class="output">-----------------------------------------------------------------<br>
+&nbsp;┌──────┐<br>
+&nbsp;│ＬＥＶＥＬ１│<br>
+&nbsp;└──────┘<br>
+-----------------------------------------------------------------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Chance]&nbsp;:14<br>
+<br>
+<br>
+<br>
+<br>
+　　&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_<br>
+<br>
+&nbsp;[&nbsp;目前猜過的字母&nbsp;]&nbsp;<br>
+<br>
+&nbsp;請輸入您的答案:&nbsp;</div>
+<div class="input"><div style="float:left;">2</div>&nbsp;<div style="float:right;margin-right:30px;">history<br>
+</div></div>
+<div class="output">-----------------------------------------------------------------<br>
+&nbsp;[&nbsp;訊息&nbsp;]&nbsp;答案錯誤&nbsp;Chance&nbsp;扣一&nbsp;。<br>
+-----------------------------------------------------------------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Chance]&nbsp;:13<br>
+<br>
+　　┌<br>
+<br>
+<br>
+<br>
+　　&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_<br>
+<br>
+&nbsp;[&nbsp;目前猜過的字母&nbsp;]&nbsp;<br>
+<br>
+&nbsp;請輸入您的答案:&nbsp;</div>
+<div class="input"><div style="float:left;">3</div>&nbsp;<div style="float:right;margin-right:30px;">c<br>
+</div></div>
+<div class="output">-----------------------------------------------------------------<br>
+&nbsp;[&nbsp;訊息&nbsp;]&nbsp;字母對了。<br>
+-----------------------------------------------------------------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Chance]&nbsp;:13<br>
+<br>
+　　┌<br>
+<br>
+<br>
+<br>
+　　&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;c&nbsp;_&nbsp;_<br>
+<br>
+&nbsp;[&nbsp;目前猜過的字母&nbsp;]&nbsp;&nbsp;c<br>
+<br>
+&nbsp;請輸入您的答案:&nbsp;</div>
+<div class="input"><div style="float:left;">4</div>&nbsp;<div style="float:right;margin-right:30px;">d<br>
+</div></div>
+<div class="output">-----------------------------------------------------------------<br>
+&nbsp;[&nbsp;訊息&nbsp;]&nbsp;字母對了。<br>
+-----------------------------------------------------------------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Chance]&nbsp;:13<br>
+<br>
+　　┌<br>
+<br>
+<br>
+<br>
+　　&nbsp;_&nbsp;d&nbsp;_&nbsp;_&nbsp;_&nbsp;_&nbsp;c&nbsp;_&nbsp;_<br>
+<br>
+&nbsp;[&nbsp;目前猜過的字母&nbsp;]&nbsp;&nbsp;c&nbsp;d<br>
+<br>
+&nbsp;請輸入您的答案:&nbsp;</div>
+<div class="input"><div style="float:left;">5</div>&nbsp;<div style="float:right;margin-right:30px;">e<br>
+</div></div>
+<div class="output">-----------------------------------------------------------------<br>
+&nbsp;[&nbsp;訊息&nbsp;]&nbsp;字母對了。<br>
+-----------------------------------------------------------------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Chance]&nbsp;:13<br>
+<br>
+　　┌<br>
+<br>
+<br>
+<br>
+　　&nbsp;_&nbsp;d&nbsp;e&nbsp;_&nbsp;_&nbsp;_&nbsp;c&nbsp;_&nbsp;_<br>
+<br>
+&nbsp;[&nbsp;目前猜過的字母&nbsp;]&nbsp;&nbsp;c&nbsp;d&nbsp;e<br>
+<br>
+&nbsp;請輸入您的答案:&nbsp;</div>
+<div class="input"><div style="float:left;">6</div>&nbsp;<div style="float:right;margin-right:30px;">f<br>
+</div></div>
+<div class="output">-----------------------------------------------------------------<br>
+&nbsp;[&nbsp;訊息&nbsp;]&nbsp;答案錯誤&nbsp;Chance&nbsp;扣一&nbsp;。<br>
+-----------------------------------------------------------------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Chance]&nbsp;:12<br>
+<br>
+　　┌─<br>
+<br>
+<br>
+<br>
+　　&nbsp;_&nbsp;d&nbsp;e&nbsp;_&nbsp;_&nbsp;_&nbsp;c&nbsp;_&nbsp;_<br>
+<br>
+&nbsp;[&nbsp;目前猜過的字母&nbsp;]&nbsp;&nbsp;c&nbsp;d&nbsp;e&nbsp;f<br>
+<br>
+&nbsp;請輸入您的答案:&nbsp;</div>
+<div class="input"><div style="float:left;">7</div>&nbsp;<div style="float:right;margin-right:30px;">g<br>
+</div></div>
+<div class="output">-----------------------------------------------------------------<br>
+&nbsp;[&nbsp;訊息&nbsp;]&nbsp;答案錯誤&nbsp;Chance&nbsp;扣一&nbsp;。<br>
+-----------------------------------------------------------------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Chance]&nbsp;:11<br>
+<br>
+　　┌─┐<br>
+<br>
+<br>
+<br>
+　　&nbsp;_&nbsp;d&nbsp;e&nbsp;_&nbsp;_&nbsp;_&nbsp;c&nbsp;_&nbsp;_<br>
+<br>
+&nbsp;[&nbsp;目前猜過的字母&nbsp;]&nbsp;&nbsp;c&nbsp;d&nbsp;e&nbsp;f&nbsp;g<br>
+<br>
+&nbsp;請輸入您的答案:&nbsp;</div>
+<div class="input"><div style="float:left;">8</div>&nbsp;<div style="float:right;margin-right:30px;">h<br>
+</div></div>
+<div class="output">-----------------------------------------------------------------<br>
+&nbsp;[&nbsp;訊息&nbsp;]&nbsp;答案錯誤&nbsp;Chance&nbsp;扣一&nbsp;。<br>
+-----------------------------------------------------------------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Chance]&nbsp;:10<br>
+<br>
+　　┌─┐<br>
+　　│<br>
+<br>
+<br>
+<br>
+　　&nbsp;_&nbsp;d&nbsp;e&nbsp;_&nbsp;_&nbsp;_&nbsp;c&nbsp;_&nbsp;_<br>
+<br>
+&nbsp;[&nbsp;目前猜過的字母&nbsp;]&nbsp;&nbsp;c&nbsp;d&nbsp;e&nbsp;f&nbsp;g&nbsp;h<br>
+<br>
+&nbsp;請輸入您的答案:&nbsp;</div>
+<div class="input"><div style="float:left;">9</div>&nbsp;<div style="float:right;margin-right:30px;">l<br>
+</div></div>
+<div class="output">-----------------------------------------------------------------<br>
+&nbsp;[&nbsp;訊息&nbsp;]&nbsp;字母對了。<br>
+-----------------------------------------------------------------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Chance]&nbsp;:10<br>
+<br>
+　　┌─┐<br>
+　　│<br>
+<br>
+<br>
+<br>
+　　&nbsp;_&nbsp;d&nbsp;e&nbsp;_&nbsp;_&nbsp;_&nbsp;c&nbsp;_&nbsp;l<br>
+<br>
+&nbsp;[&nbsp;目前猜過的字母&nbsp;]&nbsp;&nbsp;c&nbsp;d&nbsp;e&nbsp;f&nbsp;g&nbsp;h&nbsp;l<br>
+<br>
+&nbsp;請輸入您的答案:&nbsp;</div>
+<div class="input"><div style="float:left;">10</div>&nbsp;<div style="float:right;margin-right:30px;">j<br>
+</div></div>
+<div class="output">-----------------------------------------------------------------<br>
+&nbsp;[&nbsp;訊息&nbsp;]&nbsp;答案錯誤&nbsp;Chance&nbsp;扣一&nbsp;。<br>
+-----------------------------------------------------------------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Chance]&nbsp;:9<br>
+<br>
+　　┌─┐<br>
+　　│　○<br>
+<br>
+<br>
+<br>
+　　&nbsp;_&nbsp;d&nbsp;e&nbsp;_&nbsp;_&nbsp;_&nbsp;c&nbsp;_&nbsp;l<br>
+<br>
+&nbsp;[&nbsp;目前猜過的字母&nbsp;]&nbsp;&nbsp;c&nbsp;d&nbsp;e&nbsp;f&nbsp;g&nbsp;h&nbsp;j&nbsp;l<br>
+<br>
+&nbsp;請輸入您的答案:&nbsp;</div>
+<div class="input"><div style="float:left;">11</div>&nbsp;<div style="float:right;margin-right:30px;">k<br>
+</div></div>
+<div class="output">-----------------------------------------------------------------<br>
+&nbsp;[&nbsp;訊息&nbsp;]&nbsp;答案錯誤&nbsp;Chance&nbsp;扣一&nbsp;。<br>
+-----------------------------------------------------------------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Chance]&nbsp;:8<br>
+<br>
+　　┌─┐<br>
+　　│　○╭<br>
+<br>
+<br>
+<br>
+　　&nbsp;_&nbsp;d&nbsp;e&nbsp;_&nbsp;_&nbsp;_&nbsp;c&nbsp;_&nbsp;l<br>
+<br>
+&nbsp;[&nbsp;目前猜過的字母&nbsp;]&nbsp;&nbsp;c&nbsp;d&nbsp;e&nbsp;f&nbsp;g&nbsp;h&nbsp;j&nbsp;k&nbsp;l<br>
+<br>
+&nbsp;請輸入您的答案:&nbsp;</div>
+<div class="input"><div style="float:left;">12</div>&nbsp;<div style="float:right;margin-right:30px;">m<br>
+</div></div>
+<div class="output">-----------------------------------------------------------------<br>
+&nbsp;[&nbsp;訊息&nbsp;]&nbsp;答案錯誤&nbsp;Chance&nbsp;扣一&nbsp;。<br>
+-----------------------------------------------------------------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Chance]&nbsp;:7<br>
+<br>
+　　┌─┐<br>
+　　│　○╭<br>
+　　│<br>
+<br>
+<br>
+<br>
+　　&nbsp;_&nbsp;d&nbsp;e&nbsp;_&nbsp;_&nbsp;_&nbsp;c&nbsp;_&nbsp;l<br>
+<br>
+&nbsp;[&nbsp;目前猜過的字母&nbsp;]&nbsp;&nbsp;c&nbsp;d&nbsp;e&nbsp;f&nbsp;g&nbsp;h&nbsp;j&nbsp;k&nbsp;l&nbsp;m<br>
+<br>
+&nbsp;請輸入您的答案:&nbsp;</div>
+<div class="input"><div style="float:left;">13</div>&nbsp;<div style="float:right;margin-right:30px;">p<br>
+</div></div>
+<div class="output">-----------------------------------------------------------------<br>
+&nbsp;[&nbsp;訊息&nbsp;]&nbsp;答案錯誤&nbsp;Chance&nbsp;扣一&nbsp;。<br>
+-----------------------------------------------------------------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Chance]&nbsp;:6<br>
+<br>
+　　┌─┐<br>
+　　│　○╭<br>
+　　│╭<br>
+<br>
+<br>
+<br>
+　　&nbsp;_&nbsp;d&nbsp;e&nbsp;_&nbsp;_&nbsp;_&nbsp;c&nbsp;_&nbsp;l<br>
+<br>
+&nbsp;[&nbsp;目前猜過的字母&nbsp;]&nbsp;&nbsp;c&nbsp;d&nbsp;e&nbsp;f&nbsp;g&nbsp;h&nbsp;j&nbsp;k&nbsp;l&nbsp;m&nbsp;p<br>
+<br>
+&nbsp;請輸入您的答案:&nbsp;</div>
+<div class="input"><div style="float:left;">14</div>&nbsp;<div style="float:right;margin-right:30px;">q<br>
+</div></div>
+<div class="output">-----------------------------------------------------------------<br>
+&nbsp;[&nbsp;訊息&nbsp;]&nbsp;答案錯誤&nbsp;Chance&nbsp;扣一&nbsp;。<br>
+-----------------------------------------------------------------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Chance]&nbsp;:5<br>
+<br>
+　　┌─┐<br>
+　　│　○╭<br>
+　　│╭┼<br>
+<br>
+<br>
+<br>
+　　&nbsp;_&nbsp;d&nbsp;e&nbsp;_&nbsp;_&nbsp;_&nbsp;c&nbsp;_&nbsp;l<br>
+<br>
+&nbsp;[&nbsp;目前猜過的字母&nbsp;]&nbsp;&nbsp;c&nbsp;d&nbsp;e&nbsp;f&nbsp;g&nbsp;h&nbsp;j&nbsp;k&nbsp;l&nbsp;m&nbsp;p&nbsp;q<br>
+<br>
+&nbsp;請輸入您的答案:&nbsp;</div>
+<div class="input"><div style="float:left;">15</div>&nbsp;<div style="float:right;margin-right:30px;">s<br>
+</div></div>
+<div class="output">-----------------------------------------------------------------<br>
+&nbsp;[&nbsp;訊息&nbsp;]&nbsp;答案錯誤&nbsp;Chance&nbsp;扣一&nbsp;。<br>
+-----------------------------------------------------------------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Chance]&nbsp;:4<br>
+<br>
+　　┌─┐<br>
+　　│　○╭<br>
+　　│╭┼╯<br>
+<br>
+<br>
+<br>
+　　&nbsp;_&nbsp;d&nbsp;e&nbsp;_&nbsp;_&nbsp;_&nbsp;c&nbsp;_&nbsp;l<br>
+<br>
+&nbsp;[&nbsp;目前猜過的字母&nbsp;]&nbsp;&nbsp;c&nbsp;d&nbsp;e&nbsp;f&nbsp;g&nbsp;h&nbsp;j&nbsp;k&nbsp;l&nbsp;m&nbsp;p&nbsp;q&nbsp;s<br>
+<br>
+&nbsp;請輸入您的答案:&nbsp;</div>
+<div class="input"><div style="float:left;">16</div>&nbsp;<div style="float:right;margin-right:30px;">t<br>
+</div></div>
+<div class="output">-----------------------------------------------------------------<br>
+&nbsp;[&nbsp;訊息&nbsp;]&nbsp;字母對了。<br>
+-----------------------------------------------------------------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Chance]&nbsp;:4<br>
+<br>
+　　┌─┐<br>
+　　│　○╭<br>
+　　│╭┼╯<br>
+<br>
+<br>
+<br>
+　　&nbsp;_&nbsp;d&nbsp;e&nbsp;_&nbsp;t&nbsp;_&nbsp;c&nbsp;_&nbsp;l<br>
+<br>
+&nbsp;[&nbsp;目前猜過的字母&nbsp;]&nbsp;&nbsp;c&nbsp;d&nbsp;e&nbsp;f&nbsp;g&nbsp;h&nbsp;j&nbsp;k&nbsp;l&nbsp;m&nbsp;p&nbsp;q&nbsp;s&nbsp;t<br>
+<br>
+&nbsp;請輸入您的答案:&nbsp;</div>
+<div class="input"><div style="float:left;">17</div>&nbsp;<div style="float:right;margin-right:30px;">u<br>
+</div></div>
+<div class="output">-----------------------------------------------------------------<br>
+&nbsp;[&nbsp;訊息&nbsp;]&nbsp;答案錯誤&nbsp;Chance&nbsp;扣一&nbsp;。<br>
+-----------------------------------------------------------------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Chance]&nbsp;:3<br>
+<br>
+　　┌─┐<br>
+　　│　○╭<br>
+　　│╭┼╯<br>
+　　│<br>
+<br>
+<br>
+<br>
+　　&nbsp;_&nbsp;d&nbsp;e&nbsp;_&nbsp;t&nbsp;_&nbsp;c&nbsp;_&nbsp;l<br>
+<br>
+&nbsp;[&nbsp;目前猜過的字母&nbsp;]&nbsp;&nbsp;c&nbsp;d&nbsp;e&nbsp;f&nbsp;g&nbsp;h&nbsp;j&nbsp;k&nbsp;l&nbsp;m&nbsp;p&nbsp;q&nbsp;s&nbsp;t&nbsp;u<br>
+<br>
+&nbsp;請輸入您的答案:&nbsp;</div>
+<div class="input"><div style="float:left;">18</div>&nbsp;<div style="float:right;margin-right:30px;">w<br>
+</div></div>
+<div class="output">-----------------------------------------------------------------<br>
+&nbsp;[&nbsp;訊息&nbsp;]&nbsp;答案錯誤&nbsp;Chance&nbsp;扣一&nbsp;。<br>
+-----------------------------------------------------------------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Chance]&nbsp;:2<br>
+<br>
+　　┌─┐<br>
+　　│　○╭<br>
+　　│╭┼╯<br>
+　　│　│<br>
+<br>
+<br>
+<br>
+　　&nbsp;_&nbsp;d&nbsp;e&nbsp;_&nbsp;t&nbsp;_&nbsp;c&nbsp;_&nbsp;l<br>
+<br>
+&nbsp;[&nbsp;目前猜過的字母&nbsp;]&nbsp;&nbsp;c&nbsp;d&nbsp;e&nbsp;f&nbsp;g&nbsp;h&nbsp;j&nbsp;k&nbsp;l&nbsp;m&nbsp;p&nbsp;q&nbsp;s&nbsp;t&nbsp;u&nbsp;w<br>
+<br>
+&nbsp;請輸入您的答案:&nbsp;</div>
+<div class="input"><div style="float:left;">19</div>&nbsp;<div style="float:right;margin-right:30px;">z<br>
+</div></div>
+<div class="output">-----------------------------------------------------------------<br>
+&nbsp;[&nbsp;訊息&nbsp;]&nbsp;答案錯誤&nbsp;Chance&nbsp;扣一&nbsp;。<br>
+-----------------------------------------------------------------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Chance]&nbsp;:1<br>
+<br>
+　　┌─┐<br>
+　　│　○╭<br>
+　　│╭┼╯<br>
+　　│　│<br>
+　　│<br>
+<br>
+<br>
+<br>
+　　&nbsp;_&nbsp;d&nbsp;e&nbsp;_&nbsp;t&nbsp;_&nbsp;c&nbsp;_&nbsp;l<br>
+<br>
+&nbsp;[&nbsp;目前猜過的字母&nbsp;]&nbsp;&nbsp;c&nbsp;d&nbsp;e&nbsp;f&nbsp;g&nbsp;h&nbsp;j&nbsp;k&nbsp;l&nbsp;m&nbsp;p&nbsp;q&nbsp;s&nbsp;t&nbsp;u&nbsp;w&nbsp;z<br>
+<br>
+&nbsp;請輸入您的答案:&nbsp;</div>
+<div class="input"><div style="float:left;">20</div>&nbsp;<div style="float:right;margin-right:30px;">y<br>
+</div></div>
+<div class="output">-----------------------------------------------------------------<br>
+&nbsp;[&nbsp;訊息&nbsp;]&nbsp;答案錯誤&nbsp;Chance&nbsp;扣一&nbsp;。<br>
+-----------------------------------------------------------------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Chance]&nbsp;:0<br>
+<br>
+　　┌─┐<br>
+　　│　○╭<br>
+　　│╭┼╯<br>
+　　│　│<br>
+　　│　∩<br>
+<br>
+<br>
+<br>
+　　&nbsp;_&nbsp;d&nbsp;e&nbsp;_&nbsp;t&nbsp;_&nbsp;c&nbsp;_&nbsp;l<br>
+<br>
+&nbsp;[&nbsp;目前猜過的字母&nbsp;]&nbsp;&nbsp;c&nbsp;d&nbsp;e&nbsp;f&nbsp;g&nbsp;h&nbsp;j&nbsp;k&nbsp;l&nbsp;m&nbsp;p&nbsp;q&nbsp;s&nbsp;t&nbsp;u&nbsp;w&nbsp;y&nbsp;z<br>
+<br>
+&nbsp;請輸入您的答案:&nbsp;</div>
+<div class="input"><div style="float:left;">21</div>&nbsp;<div style="float:right;margin-right:30px;">x<br>
+</div></div>
+<div class="output">-----------------------------------------------------------------<br>
+&nbsp;[&nbsp;訊息&nbsp;]&nbsp;沒有Chance了。<br>
+-----------------------------------------------------------------<br>
+<br>
+&nbsp;[&nbsp;訊息&nbsp;]&nbsp;挑戰失敗...&nbsp;<br>
+<br>
+　　┌─┐<br>
+　　│　○╭<br>
+　　│╭┼╯<br>
+　　│　│<br>
+　　│　∩<br>
+　　┴──&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;再見了...&nbsp;Hangman先生...<br>
+-----------------------------------------------------------------<br>
+<br>
+&nbsp;[&nbsp;結束程式&nbsp;]<br>
+</div>
+</div>
+		
+	</body> 
+</html>
