@@ -9,12 +9,12 @@ app.controller('examAnalysisCtrl', function($scope, $http) {
         url: "/web/res/data/exam_data.json"
     }).
     then(function(data, status, headers, config) {
-        console.log("Get JSON...");
-        console.log(data.data);
+        // console.log("Get JSON...");
+        // console.log(data.data);
         exam_statics = data.data.exam_statics;
         exam_doc = data.data.exam_doc;
 
-        console.log(exam_doc);
+        // console.log(exam_doc);
 
         $scope.exam_doc = exam_doc;
 
