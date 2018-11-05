@@ -45,6 +45,10 @@ p {
     z-index: 1000;
 }
 
+.menu-btn.fixed-action-btn{
+    top:15px;
+}
+
 main{
     margin-left: 300px;
 }
