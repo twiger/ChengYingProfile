@@ -14,15 +14,6 @@ function getParameterByName(name) {
 }
 
 
-/**
- * return target IP
- */
-function getIP() {
-    console.log("Get IP!");
-    // return 'http://140.116.72.187:5000';
-    return 'http://127.0.0.1:5000';
-}
-
 var sideNavClose = true;
 
 function triggerSideNav() {
