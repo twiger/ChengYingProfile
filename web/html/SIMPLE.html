@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <title>Project - SIMPLE</title>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/web/dist/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="/web/css/global.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <!-- <link href="/web/css/research.css" type="text/css" rel="stylesheet" media="screen,projection" /> -->
+</head>
+
+<body ng-app="colors" ng-controller="hwReviewCtrl">
+    <div ng-include="'/web/html/global/sideNavBar.html'"></div>
+    <main>
+        <nav class="page-top teal">
+            <div class="page container">
+                <div class="nav-wrapper">
+                    <strong class="page-title">Project - SIMPLE</strong>
+                </div>
+            </div>
+        </nav>
+        <div class="page container">
+            <div class="row">
+                <div class="col s12">
+                    <div class="hidden-divider"></div>
+                    <h3 class="header teal-text">SIMulated Programming Learning Environment</h3>
+                    <div class="divider"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <h5>Introduction</h5>
+                    <p>
+                        SIMPLE motivates students to practice programming skills via gaming. Players of SIMPLE write their strategies to control entities in the game. The specified actions of entities in strategies will gain or consume some scores. At the end of the game, players get the feedback in terms of scores of their strategies. To get higher scores, players could improve their strategies based on the observation of last playing.The programming languages supported by SIMPLE are Python, Java, and C. Over the years, various strategic education games on SIMPLE have been developed, such as ResourceCraft, ConnectFour, Blokus, and Big2.
+                    </p>
+                    <div class="small-hidden-divider"></div>
+                    <h5>My Responsibility</h5>
+                    <p>
+                        Lead a team with 5 members to develop a famous game named ConnectFour based on the skeleton of SIMPLE. Proceed the final projects to let students compete with each other through programming. Select the king of programming in IntroCS.
+                    </p>
+                    <div class="small-hidden-divider"></div>
+                    <div class="hidden-divider"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <div class="hidden-divider"></div>
+                    <h3 class="header teal-text">Project Demo</h3>
+                    <div class="divider"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <div class="video-container"> 
+                        <iframe src="https://www.youtube.com/embed/lsTgGIBiMpA" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <div class="large-hidden-divider"></div>
+                </div>
+            </div>
+        </div>
+        <div ng-include="'/web/html/global/footer.html'"></div>
+    </main>
+    <!--  Scripts-->
+    <script src="/web/dist/jquery-3.1.1.js"></script>
+    <script src="/web/dist/materialize.js"></script>
+    <script src="/web/dist/angular.js"></script>
+    <script src="/web/js/global.js"></script>
+    <script src="/web/js/hwReviewCtrl.js"></script>
+</body>
